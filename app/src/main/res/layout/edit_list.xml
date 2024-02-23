@@ -4,6 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close_button"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="32dp"
+        tools:ignore="MissingConstraints" />
+
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="wrap_content"
@@ -12,7 +20,8 @@
         android:inputType="text"
         android:text="Name"
         tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="76dp" />
+        tools:layout_editor_absoluteY="76dp"
+        tools:ignore="MissingConstraints" />
 
     <Switch
         android:id="@+id/switch1"
@@ -20,7 +29,8 @@
         android:layout_height="wrap_content"
         android:text="Switch"
         tools:layout_editor_absoluteX="251dp"
-        tools:layout_editor_absoluteY="259dp" />
+        tools:layout_editor_absoluteY="259dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextDate2"
@@ -29,15 +39,8 @@
         android:ems="10"
         android:inputType="date"
         tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="259dp" />
-
-    <MultiAutoCompleteTextView
-        android:id="@+id/multiAutoCompleteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MultiAutoCompleteTextView"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="170dp" />
+        tools:layout_editor_absoluteY="259dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -45,6 +48,15 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="303dp"
-        tools:layout_editor_absoluteY="32dp" />
+        tools:layout_editor_absoluteY="32dp"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="176dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

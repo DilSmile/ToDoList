@@ -11,11 +11,12 @@ import com.example.homework1.data.TodoItem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val todoList = generateList(50)
+        val todoList = generateList(3)
 
         val recycler_view = findViewById<RecyclerView>(R.id.recycler_view)
 
@@ -28,13 +29,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, MainActivity2::class.java)
             startActivity(intent)
         }
-
     }
     private fun generateList(size: Int): List<TodoItem> {
         val list = ArrayList<TodoItem>()
 
         val errorImage = AppCompatResources.getDrawable(this, R.drawable.error)
-        val checkBox = "wwedewew" // or true if you want to initialize as checked
+        val checkBox = "Купить что то" // or true if you want to initialize as checked
 
         for (i in 0 until size) {
             val item = TodoItem(1, errorImage, checkBox)

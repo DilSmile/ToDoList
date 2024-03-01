@@ -1,12 +1,9 @@
 package com.example.homework1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Switch;
-import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
     @Override
@@ -22,10 +19,5 @@ public class MainActivity2 extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
 
-
-        Switch switch1 = findViewById(R.id.switch1);
-        TextView selectedDateTextView = findViewById(R.id.selectedDateTextView);
-        String selectedDate = "2024-02-24";
-        selectedDateTextView.setText(selectedDate);
     }
 }

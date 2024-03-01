@@ -3,7 +3,6 @@ package com.example.homework1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val todoList = generateList(3)
+        val todoList = generateList(100)
 
         val recycler_view = findViewById<RecyclerView>(R.id.recycler_view)
 
@@ -42,5 +41,6 @@ class MainActivity : AppCompatActivity() {
         }
         return list
     }
+
 
 }

@@ -6,4 +6,5 @@ data class TodoItem(
     val id: Int,
     val errorImage: Drawable?,
     val checkBox: String,
+    var isChecked: Boolean = false
 )

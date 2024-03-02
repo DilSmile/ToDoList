@@ -11,7 +11,7 @@ class TodoItemsRepository(private val context: Context) {
         val errorImage = AppCompatResources.getDrawable(context, R.drawable.error)
         val checkBox = "Купить что то"
 
-        for (i in 0 until size) {
+        for (i in 0 until 50) {
             val item = TodoItem(1, errorImage, checkBox)
             list += item
         }

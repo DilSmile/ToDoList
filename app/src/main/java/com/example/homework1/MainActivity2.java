@@ -1,18 +1,26 @@
 package com.example.homework1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 public class MainActivity2 extends AppCompatActivity {
+    private TextView selectedDateTextView;
+    private EditText editTextDate2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
                 String textFromEditText1 = editText1.getText().toString();
 
                 String message = "Saved: " + selectedItem + "\n"
-                        + "Text from EditText 1: " + textFromEditText1 + "\n";
+                        + "EditText : " + textFromEditText1 + "\n";
 
                 Toast.makeText(MainActivity2.this, message, Toast.LENGTH_SHORT).show();
 
@@ -49,7 +57,40 @@ public class MainActivity2 extends AppCompatActivity {
                 finish();
             }
         });
+
+
+        selectedDateTextView = findViewById(R.id.selectedDateTextView);
+        editTextDate2 = findViewById(R.id.editTextDate2);
+        SwitchCompat switch1 = findViewById(R.id.switch1);
+
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    showDatePicker();
+                }
+            }
+        });
+    }
+    private void showDatePicker() {
+        // Get current date
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+        // Create DatePickerDialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity2.this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        // Set selected date to selectedDateTextView
+                        String selectedDate = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
+                        selectedDateTextView.setText(selectedDate);
+                    }
+                }, year, month, dayOfMonth);
+
+        datePickerDialog.show();
     }
 }
-
 

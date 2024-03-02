@@ -25,7 +25,7 @@ class ToDoAdapter(private val todoList: List<TodoItem>) : RecyclerView.Adapter<T
         holder.checkBox.text = currentItem.checkBox
         holder.checkBox.isChecked = currentItem.isChecked
 
-        // Save checkbox state when clicked
+
         holder.checkBox.setOnCheckedChangeListener { _, isChecked ->
             currentItem.isChecked = isChecked
         }
